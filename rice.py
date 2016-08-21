@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import smtplib
 from email.mime.text import MIMEText
 import datetime
@@ -51,7 +53,7 @@ if datetime.datetime.today().weekday() <= 3:
     msg['Cc'] = "Colin Xiang <colinxiang518@gmail.com>, Tony Yang <tony@ycyang.me>"
     server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "colinxiang518@gmail.com", "tony@ycyang.me"}, msg.as_string())
 else:
-    msg['To'] = "Tony Yang <tony@ycyang.me>, Tony Yang <tonyyanga@gmail.com>"
+    msg['To'] = "Tony Yang <tony@ycyang.me>"
     server.sendmail("riceinlondon@ycyang.me", "tony@ycyang.me", msg.as_string())
 
 server.quit()
