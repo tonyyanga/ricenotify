@@ -15,10 +15,10 @@ header2 = """Hello, Tony,
 As a reminder, please decide on your rice demand for today and notify Henry or Colin by text."""
 
 disclaimer = """
+
 I understand that you may have other plan for tonight or prefer to prepare rice later. It is always at your discretion whether to honor my request or not. Should you not be able to fulfill my request, please reply this email in advance so that I can be prepared, if it is convenient for you.
 
-Thank you!
-"""
+Thank you!"""
 
 end = """
 
@@ -48,8 +48,8 @@ msg['From'] = "Automated Rice Notification <riceinlondon@ycyang.me>"
 
 if datetime.datetime.today().weekday() <= 3:
     msg['To'] = "Henry Skrehot <henryskrehot@berkeley.edu>"
-    msg['Cc'] = "Tony Yang <tony@ycyang.me>"
-    server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "tony@ycyang.me"}, msg.as_string())
+    msg['Cc'] = "Colin Xiang <colin.xiang518@berkeley.edu>, Tony Yang <tony@ycyang.me>"
+    server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "colin.xiang518@berkeley.edu", "tony@ycyang.me"}, msg.as_string())
 else:
     msg['To'] = "Tony Yang <tony@ycyang.me>, Tony Yang <tonyyanga@gmail.com>"
     server.sendmail("riceinlondon@ycyang.me", "tony@ycyang.me", msg.as_string())
