@@ -31,22 +31,22 @@ Tony Yang"""
 
 body = None
 
-if datetime.datetime.today().weekday() >= 5:
+if datetime.datetime.today().weekday() >= 4:
     body = header2 + end
-elif datetime.datetime.today().weekday() == 1:
+elif datetime.datetime.today().weekday() == 0:
     body = header1 + "DINNER TONIGHT and LUNCH TOMORROW. I will go upstairs to your flat to pick up my rice at 6:30 PM today." + disclaimer + end
-elif datetime.datetime.today().weekday() == 2:
+elif datetime.datetime.today().weekday() == 1:
     body = header1 + "DINNER TONIGHT ONLY. I will go upstairs to your flat to pick up my rice at 6:00 PM today." + disclaimer + end
-elif datetime.datetime.today().weekday() == 3:
+elif datetime.datetime.today().weekday() == 2:
     body = header1 + "DINNER TONIGHT ONLY. I will go upstairs to your flat to pick up my rice at 7:00 PM today." + disclaimer + end
-elif datetime.datetime.today().weekday() == 4:
+elif datetime.datetime.today().weekday() == 3:
     body = header1 + "DINNER TONIGHT and lunch / dinner tomorrow. I will go upstairs to your flat to pick up my rice at 6:30 PM today." + disclaimer + end
 
 msg = MIMEText(body)
 msg['Subject'] = 'Automated Rice Notification on ' + datetime.date.today().strftime("%B %d, %Y")
 msg['From'] = "Automated Rice Notification <riceinlondon@ycyang.me>"
 
-if datetime.datetime.today().weekday() <= 4:
+if datetime.datetime.today().weekday() <= 3:
     msg['To'] = "Henry Skrehot <henryskrehot@berkeley.edu>"
     msg['Cc'] = "Tony Yang <tony@ycyang.me>"
     server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "tony@ycyang.me"}, msg.as_string())
