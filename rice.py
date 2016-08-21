@@ -48,8 +48,8 @@ msg['From'] = "Automated Rice Notification <riceinlondon@ycyang.me>"
 
 if datetime.datetime.today().weekday() <= 3:
     msg['To'] = "Henry Skrehot <henryskrehot@berkeley.edu>"
-    msg['Cc'] = "Colin Xiang <colin.xiang518@berkeley.edu>, Tony Yang <tony@ycyang.me>"
-    server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "colin.xiang518@berkeley.edu", "tony@ycyang.me"}, msg.as_string())
+    msg['Cc'] = "Colin Xiang <colinxiang518@gmail.com>, Tony Yang <tony@ycyang.me>"
+    server.sendmail("riceinlondon@ycyang.me", {"henryskrehot@berkeley.edu", "colinxiang518@gmail.com", "tony@ycyang.me"}, msg.as_string())
 else:
     msg['To'] = "Tony Yang <tony@ycyang.me>, Tony Yang <tonyyanga@gmail.com>"
     server.sendmail("riceinlondon@ycyang.me", "tony@ycyang.me", msg.as_string())
